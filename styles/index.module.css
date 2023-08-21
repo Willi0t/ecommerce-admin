@@ -1,0 +1,86 @@
+.main {
+  display: flex;
+  align-items: center;
+  background-color: blue;
+  width: 100vw;
+  height: 100vh;
+}
+
+.flexJustifyCenter {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.signIn {
+  background-color: white;
+  /* top and bottom | left and right */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.loginContainer {
+  background-color: blue;
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+}
+
+.asideWrapper {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-right: 0;
+  color: white;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#ecomerceHome {
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.linkProps {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-decoration: none;
+}
+
+.activeLink {
+  background-color: white;
+  color: blue;
+}
+
+.linkProps svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.pageContent {
+  background-color: white;
+  flex-grow: 1;
+  /* top | right | bottom | left */
+  margin: 0.5rem 0.5rem 0.5rem 0rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}

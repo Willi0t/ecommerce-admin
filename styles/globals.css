@@ -1,30 +1,27 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
 * {
   box-sizing: border-box;
-  margin: 0;
 }
 
-.main {
-  display: flex;
-  align-items: center;
-  background-color: blue;
-  width: 100vw;
-  height: 100vh;
+/* a {
+  color: #0070f3;
+  text-decoration: none;
 }
 
-.flex-justify-center {
-  display: flex;
-  width: 100%;
-  justify-content: center;
+a:hover {
+  text-decoration: underline;
 }
 
-.sign-in {
-  background-color: white;
-  /* top and bottom | left and right */
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  color: inherit;
-  border: none;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-}
+img {
+  max-width: 100%;
+  display: block;
+} */
