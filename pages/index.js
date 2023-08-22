@@ -1,6 +1,7 @@
+import React from "react";
+import styles from "@/styles/index.module.css";
 import Layout from "@/components/layout";
 import { useSession } from "next-auth/react";
-import styles from "@/styles/index.module.css";
 
 export default function Home() {
   const { data: session } = useSession();
