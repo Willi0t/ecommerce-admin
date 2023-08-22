@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import styles from "@/styles/index.module.css";
+import styles from "@/styles/nav.module.css";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Nav() {
-  const [activeLink, setActiveLink] = useState("active");
+  const getLinkClassName = (linkPath) => {
+    return `${styles.linkProps} ${
+      pathname === linkPath ? styles.activeLink : styles.linkProps
+    }`;
+  };
+
+  const router = useRouter();
+  const { pathname } = router;
 
   return (
     <aside className={styles.asideWrapper}>
@@ -24,12 +31,7 @@ function Nav() {
         <span>EcommerceAdmin</span>
       </Link>
       <nav className={styles.nav}>
-        <Link
-          href={"/"}
-          className={`${styles.linkProps} ${
-            activeLink === "active" ? styles.activeLink : ""
-          }`}
-        >
+        <Link href={"/"} className={getLinkClassName("/")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -45,7 +47,7 @@ function Nav() {
           </svg>
           Dashboard
         </Link>
-        <Link href={"/products"} className={styles.linkProps}>
+        <Link href={"/products"} className={getLinkClassName("/products")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -61,7 +63,7 @@ function Nav() {
           </svg>
           Product
         </Link>
-        <Link href={"/orders"} className={styles.linkProps}>
+        <Link href={"/orders"} className={getLinkClassName("/orders")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -77,7 +79,7 @@ function Nav() {
           </svg>
           Orders
         </Link>
-        <Link href={"/settings"} className={styles.linkProps}>
+        <Link href={"/settings"} className={getLinkClassName("/settings")}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

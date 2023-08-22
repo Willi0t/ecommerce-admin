@@ -1,0 +1,44 @@
+.asideWrapper {
+  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-right: 0;
+  color: white;
+}
+
+.linkProps {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  color: inherit;
+  border: none;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-decoration: none;
+}
+
+#ecomerceHome {
+  gap: 0.25rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.activeLink {
+  background-color: white;
+  color: blue;
+}
+
+.linkProps svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
