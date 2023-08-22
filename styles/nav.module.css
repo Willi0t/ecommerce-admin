@@ -1,5 +1,5 @@
 .asideWrapper {
-  background-color: blue;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   padding: 1rem;
@@ -35,7 +35,7 @@
 
 .activeLink {
   background-color: white;
-  color: blue;
+  color: var(--primary-color);
 }
 
 .linkProps svg {

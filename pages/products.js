@@ -7,8 +7,9 @@ import { useSession, signIn, signOut } from "next-auth/react";
 function Products() {
   return (
     <Layout>
-      <Link href={"/products/new"}> Add new product</Link>
-      <button onClick={signOut}>signout</button>
+      <Link href={"/products/new"} className="btnPrimary">
+        Add new product
+      </Link>
     </Layout>
   );
 }

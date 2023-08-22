@@ -1,0 +1,6 @@
+.productButton {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0rem 0.5rem;
+  border-radius: 0.375rem;
+}
