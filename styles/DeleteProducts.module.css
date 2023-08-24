@@ -1,0 +1,13 @@
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.deleteheading {
+  font-size: 1.25rem;
+  margin: 0.25rem 0rem;
+  color: var(--primary-color);
+  font-weight: 400;
+  text-align: center;
+}

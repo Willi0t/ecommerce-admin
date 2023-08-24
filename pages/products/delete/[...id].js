@@ -1,0 +1,43 @@
+import React, { useEffect, useState } from "react";
+import styles from "@/styles/DeleteProducts.module.css";
+import Layout from "@/components/layout";
+import axios from "axios";
+import { useRouter } from "next/router";
+
+function DeleteProductPage() {
+  const [productInfo, setProductInfo] = useState();
+  const router = useRouter();
+  const { id } = router.query;
+  useEffect(() => {
+    if (!id) {
+      return;
+    }
+    axios.get("/api/products?id=" + id).then((response) => {
+      setProductInfo(response.data);
+    });
+  }, [id]);
+  function goBack() {
+    router.push("/products");
+  }
+  async function deleteProduct() {
+    await axios.delete("/api/products?id=" + id);
+    goBack();
+  }
+  return (
+    <Layout>
+      <h2 className={styles.deleteheading}>
+        Do you really want to delete product&nbsp;"{productInfo?.title}"?
+      </h2>
+      <div className={styles.buttonContainer}>
+        <button className="btnRed" onClick={deleteProduct}>
+          Yes
+        </button>
+        <button className="btnGray" onClick={goBack}>
+          No
+        </button>
+      </div>
+    </Layout>
+  );
+}
+
+export default DeleteProductPage;
