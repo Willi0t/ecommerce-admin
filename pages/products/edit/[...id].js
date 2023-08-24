@@ -19,7 +19,7 @@ function EditProductPage() {
   return (
     <Layout>
       <h2 className="heading">Edit Product</h2>
-      <ProductForm {...productInfo} />
+      {productInfo && <ProductForm {...productInfo} />}
     </Layout>
   );
 }
