@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "@/styles/DeleteProducts.module.css";
+import styles from "@/styles/deleteProducts.module.css";
 import Layout from "@/components/layout";
 import axios from "axios";
 import { useRouter } from "next/router";
