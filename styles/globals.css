@@ -33,6 +33,10 @@ label {
   color: var(--primary-color);
 }
 
+img {
+  max-height: 100%;
+}
+
 .heading {
   font-size: 1.25rem;
   margin: 0.25rem 0rem;

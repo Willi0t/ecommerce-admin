@@ -2,22 +2,25 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
 import styles from "@/styles/productForm.module.css";
+import Spinner from "./Spinner";
 
 function ProductForm({
   _id,
   title: existingTitle,
   description: existingDescription,
   price: existingPrice,
-  images,
+  images: existingImages,
 }) {
   const [title, setTitle] = useState(existingTitle || "");
   const [description, setDescription] = useState(existingDescription || "");
   const [price, setPrice] = useState(existingPrice || "");
+  const [images, setImages] = useState(existingImages || []);
   const [goToProducts, setGoToProducts] = useState(false);
+  const [isuploading, setIsUploading] = useState(false);
   const router = useRouter();
   const SaveProduct = async (ev) => {
     ev.preventDefault();
-    const data = { title, description, price };
+    const data = { title, description, price, images };
     if (_id) {
       //update
       await axios.put("/api/products", { ...data, _id });
@@ -34,12 +37,16 @@ function ProductForm({
   async function uploadImages(ev) {
     const files = ev.target?.files;
     if (files?.length > 0) {
+      setIsUploading(true);
       const data = new FormData();
       for (const file of files) {
         data.append("file", file);
       }
-      const res = await fetch("/api/upload", { method: "POST", body: data });
-      console.log(res);
+      const res = await axios.post("/api/upload", data);
+      setImages((oldImages) => {
+        return [...oldImages, ...res.data.links];
+      });
+      setIsUploading(false);
     }
   }
 
@@ -54,6 +61,17 @@ function ProductForm({
       ></input>
       <label>Images</label>
       <div className={styles.imagesContainer}>
+        {!!images?.length &&
+          images.map((link) => (
+            <div className={styles.imgIndividualContainer} key={link}>
+              <img src={link} />
+            </div>
+          ))}
+        {isuploading && (
+          <div className={styles.spinner}>
+            <Spinner />
+          </div>
+        )}
         <label className={styles.imgButton}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +93,6 @@ function ProductForm({
             onChange={uploadImages}
           ></input>
         </label>
-        {!images?.length && <div>No photos in this product</div>}
       </div>
       <label>Description</label>
       <textarea

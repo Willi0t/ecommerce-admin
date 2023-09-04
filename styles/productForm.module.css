@@ -1,5 +1,21 @@
 .imagesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
   margin-bottom: 0.5rem;
+}
+
+.imgIndividualContainer {
+  overflow: hidden;
+  border-radius: 0.5rem;
+  height: 6rem;
+}
+
+.spinner {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  padding: 0.25rem;
 }
 
 .imgButton {
