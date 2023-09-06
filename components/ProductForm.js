@@ -3,6 +3,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 import styles from "@/styles/productForm.module.css";
 import Spinner from "./Spinner";
+import { ReactSortable } from "react-sortablejs";
 
 function ProductForm({
   _id,
@@ -50,6 +51,10 @@ function ProductForm({
     }
   }
 
+  function updateImagesOrder(images) {
+    setImages(images);
+  }
+
   return (
     <form onSubmit={SaveProduct}>
       <label>Product name</label>
@@ -61,12 +66,18 @@ function ProductForm({
       ></input>
       <label>Images</label>
       <div className={styles.imagesContainer}>
-        {!!images?.length &&
-          images.map((link) => (
-            <div className={styles.imgIndividualContainer} key={link}>
-              <img src={link} />
-            </div>
-          ))}
+        <ReactSortable
+          className={styles.imageSortContainer}
+          list={images}
+          setList={updateImagesOrder}
+        >
+          {!!images?.length &&
+            images.map((link) => (
+              <div className={styles.imgIndividualContainer} key={link}>
+                <img src={link} />
+              </div>
+            ))}
+        </ReactSortable>
         {isuploading && (
           <div className={styles.spinner}>
             <Spinner />

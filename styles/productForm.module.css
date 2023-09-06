@@ -5,6 +5,12 @@
   margin-bottom: 0.5rem;
 }
 
+.imageSortContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
 .imgIndividualContainer {
   overflow: hidden;
   border-radius: 0.5rem;

@@ -1,0 +1,8 @@
+.inputContainer {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.input {
+  margin-bottom: 0rem;
+}
