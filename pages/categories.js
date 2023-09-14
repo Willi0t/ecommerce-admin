@@ -2,8 +2,10 @@ import React, { useEffect, useState } from "react";
 import Layout from "@/components/layout";
 import styles from "@/styles/categories.module.css";
 import axios from "axios";
+import { withSwal } from "react-sweetalert2";
 
-function Categories() {
+function Categories({ swal }) {
+  const [editedCategory, setEditedCategory] = useState(null);
   const [name, setName] = useState("");
   const [parentCategory, setParentCategory] = useState("");
   const [categories, setCategories] = useState([]);
@@ -18,15 +20,54 @@ function Categories() {
   }
   async function saveCategory(ev) {
     ev.preventDefault();
-    await axios.post("/api/categories", { name, parentCategory });
+    const data = { name, parentCategory };
+
+    if (editedCategory) {
+      data._id = editedCategory._id;
+      await axios.put("/api/categories", data);
+      setEditedCategory(null);
+    } else {
+      await axios.post("/api/categories", data);
+    }
+
     setName("");
     fetchCategories();
+  }
+
+  function deleteCategory(category) {
+    swal
+      .fire({
+        title: "Are you sure?",
+        text: `Do you want to delete ${category.name}`,
+        showCancelButton: true,
+        cancelButtonText: "Cancel",
+        confirmButtonText: "Yes, Delete!",
+        reverseButtons: true,
+        confirmButtonColor: "#c62828",
+      })
+      .then(async (result) => {
+        if (result.isConfirmed) {
+          const { _id } = category;
+          await axios.delete("/api/categories?_id=" + _id);
+          fetchCategories();
+        }
+      });
+  }
+
+  function editCategory(category) {
+    setEditedCategory(category);
+    setName(category.name);
+    setParentCategory(category.parent?._id);
   }
 
   return (
     <Layout>
       <h2 className="heading">Categories</h2>
-      <label>New category name</label>
+      <label>
+        {editedCategory
+          ? `Edit category ${editedCategory.name}`
+          : "Create new category"}
+      </label>
       <form on onSubmit={saveCategory} className={styles.inputContainer}>
         <input
           className={styles.input}
@@ -54,6 +95,8 @@ function Categories() {
         <thead>
           <tr>
             <td>Category name</td>
+            <td>Parent name</td>
+            <td></td>
           </tr>
         </thead>
         <tbody>
@@ -61,6 +104,22 @@ function Categories() {
             categories.map((category) => (
               <tr>
                 <td>{category.name}</td>
+                <td>{category?.parent?.name}</td>
+                <td>
+                  <button
+                    onClick={() => editCategory(category)}
+                    className="btnPrimary"
+                    style={{ marginRight: "0.25rem" }}
+                  >
+                    Edit
+                  </button>
+                  <button
+                    className="btnPrimary"
+                    onClick={() => deleteCategory(category)}
+                  >
+                    Delete
+                  </button>
+                </td>
               </tr>
             ))}
         </tbody>
@@ -69,4 +128,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+export default withSwal(({ swal }, ref) => <Categories swal={swal} />);
