@@ -3,6 +3,21 @@
   gap: 0.25rem;
 }
 
-.input {
-  margin-bottom: 0rem;
+.propertiesContainer {
+  margin-bottom: 0.5rem;
+}
+
+.block {
+  display: block;
+}
+
+.propertyInputContainer {
+  display: flex;
+  margin-bottom: 0.5rem;
+  gap: 0.25rem;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 0.25rem;
 }

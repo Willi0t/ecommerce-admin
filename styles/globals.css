@@ -70,6 +70,12 @@ img {
   color: white;
 }
 
+.btnGrayAlt {
+  background-color: #818181;
+  color: white;
+}
+
+.btnGrayAlt,
 .btnRed,
 .btnGray {
   padding: 0.25rem 1rem;
