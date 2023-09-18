@@ -1,18 +1,16 @@
 .asideWrapper {
-  background-color: var(--primary-color);
+  background-color: var(--bg-grey);
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  padding-right: 0;
-  color: white;
+  color: #686868;
 }
 
 .linkProps {
   display: flex;
   gap: 0.25rem;
   padding: 0.25rem;
-  border-top-left-radius: 0.5rem;
-  border-bottom-left-radius: 0.5rem;
+  border-radius: 0.25rem;
   color: inherit;
   border: none;
   font: inherit;
@@ -34,7 +32,11 @@
 }
 
 .activeLink {
-  background-color: white;
+  background-color: #e3e0ff;
+  color: black;
+}
+
+.activeLink svg {
   color: var(--primary-color);
 }
 
@@ -44,7 +46,7 @@
 }
 
 .linkPropsButton {
-  background-color: var(--primary-color);
+  background-color: var#EEEEEE;
   display: flex;
   gap: 0.3rem;
   padding: 0.25rem;
