@@ -1,9 +1,62 @@
 .asideWrapper {
+  width: 100%;
+  height: 100%;
+  left: 100%;
+  position: fixed;
+  /* display: flex; */
   background-color: var(--bg-grey);
-  display: flex;
   flex-direction: column;
   padding: 1rem;
   color: #686868;
+}
+
+.desktop {
+  display: none;
+}
+
+.LogoSpaceing {
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+
+.navOn {
+  width: 100%;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  /* display: flex; */
+  background-color: var(--bg-grey);
+  flex-direction: column;
+  padding: 1rem;
+  color: #686868;
+  transition-property: all;
+  transition-duration: 0.3s; /* You can adjust the duration to your preference */
+  transition-timing-function: cubic-bezier(
+    0.4,
+    0,
+    0.2,
+    1
+  ); /* You can adjust the easing function */
+}
+
+.navOff {
+  width: 100%;
+  height: 100%;
+  left: -100%;
+  position: fixed;
+  /* display: flex; */
+  background-color: var(--bg-grey);
+  flex-direction: column;
+  padding: 1rem;
+  color: #686868;
+  transition-property: all;
+  transition-duration: 0.3s; /* You can adjust the duration to your preference */
+  transition-timing-function: cubic-bezier(
+    0.4,
+    0,
+    0.2,
+    1
+  ); /* You can adjust the easing function */
 }
 
 .linkProps {
@@ -17,12 +70,6 @@
   cursor: pointer;
   outline: inherit;
   text-decoration: none;
-}
-
-#ecomerceHome {
-  gap: 0.25rem;
-  margin-bottom: 1rem;
-  margin-right: 0.5rem;
 }
 
 .nav {
@@ -64,3 +111,23 @@
   width: 1.5rem;
   height: 1.5rem;
 }
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {...} */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .navOff {
+    width: auto;
+    position: static;
+  }
+
+  .desktop {
+    display: block;
+  }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */
