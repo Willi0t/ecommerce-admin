@@ -139,8 +139,8 @@ function Categories({ swal }) {
           <button
             type="button"
             onClick={addProperty}
-            className="btnPrimary"
-            style={{ fontSize: "0.8rem", marginBottom: "0.5rem" }}
+            className="btnGrayAlt"
+            style={{ fontSize: "0.8rem", marginBottom: "0.25rem" }}
           >
             Add new properties
           </button>
@@ -214,13 +214,13 @@ function Categories({ swal }) {
                   <td>
                     <button
                       onClick={() => editCategory(category)}
-                      className="btnPrimary"
+                      className="btnCategory"
                       style={{ marginRight: "0.25rem" }}
                     >
                       Edit
                     </button>
                     <button
-                      className="btnPrimary"
+                      className="btnCategoryRed"
                       onClick={() => deleteCategory(category)}
                     >
                       Delete
