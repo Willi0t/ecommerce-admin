@@ -57,11 +57,12 @@
 }
 
 .hamburger svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .linkProps {
+  gap: 0.5rem;
   display: flex;
   align-items: center;
   background-color: var#EEEEEE;
@@ -75,8 +76,8 @@
 }
 
 .linkProps svg {
-  width: 2rem;
-  height: 2rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .pageContentContainer {
@@ -87,11 +88,11 @@
 }
 
 .pageContent {
-  background-color: white;
+  /* background-color: white; */
   flex-grow: 1;
   /* top | right | bottom | left */
-  margin: 0.5rem 0.5rem 0.5rem 0rem;
-  border-radius: 0.5rem;
+  /* margin: 0.5rem 0.5rem 0.5rem 0rem; */
+  /* border-radius: 0.5rem; */
   padding: 1rem;
 }
 
