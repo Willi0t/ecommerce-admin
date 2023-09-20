@@ -144,6 +144,7 @@ function Categories({ swal }) {
           >
             Add new properties
           </button>
+          {/* rendering properties if edeting a category */}
           {properties.length > 0 &&
             properties.map((property, index) => (
               <div className={styles.propertyInputContainer}>
@@ -196,6 +197,7 @@ function Categories({ swal }) {
           </button>
         </div>
       </form>
+      {/* display all categories if not editing */}
       {!editedCategory && (
         <table className="tableGlobal">
           <thead>

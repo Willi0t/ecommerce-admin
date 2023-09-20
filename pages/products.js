@@ -23,6 +23,7 @@ function Products() {
           </tr>
         </thead>
         <tbody>
+          {/* mapping products */}
           {products.map((product) => (
             <tr key={product._id}>
               <td>{product.title}</td>

@@ -104,11 +104,13 @@ function ProductForm({
       <label>Category</label>
       <select value={category} onChange={(ev) => setCategory(ev.target.value)}>
         <option value="">Uncategorized</option>
+        {/* category mapping */}
         {categories.length > 0 &&
           categories.map((item) => (
             <option value={item._id}>{item.name}</option>
           ))}
       </select>
+      {/*  properties mapping */}
       {propertiesToFill.length > 0 &&
         propertiesToFill.map((p) => (
           <div key={p.name} className="">
@@ -134,6 +136,7 @@ function ProductForm({
           list={images}
           setList={updateImagesOrder}
         >
+          {/*  Image mapping */}
           {!!images?.length &&
             images.map((link) => (
               <div className={styles.imgIndividualContainer} key={link}>
