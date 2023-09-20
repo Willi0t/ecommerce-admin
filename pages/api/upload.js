@@ -8,6 +8,7 @@ const bucketName = "hyper-e-commerce-store";
 
 async function handle(req, res) {
   await mongooseConnect();
+  //added security
   await isAdminRequest(req, res);
 
   const form = new multiparty.Form();

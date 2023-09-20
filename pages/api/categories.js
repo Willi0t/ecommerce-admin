@@ -3,6 +3,7 @@ import { Category } from "@/models/Category";
 import { getServerSession } from "next-auth";
 import { authOptions, isAdminRequest } from "@/pages/api/auth/[...nextauth]";
 
+//API handlers
 async function handle(req, res) {
   const { method } = req;
   await mongooseConnect();
