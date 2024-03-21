@@ -1,0 +1,9 @@
+.paid {
+    font-weight: bold;
+    color: green;
+}
+
+.notPaid {
+    font-weight: bold;
+    color: red;
+}

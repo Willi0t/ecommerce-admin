@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "@/styles/orders.module.css";
 import Layout from "@/components/layout";
 import axios from "axios";
+import Center from "@/components/Center";
 
 function OrdersPage() {
     const [orders, setOrders] = useState([]);
@@ -19,7 +20,8 @@ function OrdersPage() {
             <table className="tableGlobal">
                 <thead>
                     <tr>
-                        <th>Created AT</th>
+                        <th>Date</th>
+                        <th>Payment status</th>
                         <th>Recipient</th>
                         <th>Products</th>
                     </tr>
@@ -28,27 +30,48 @@ function OrdersPage() {
                     {orders.length > 0 &&
                         orders.map((order) => (
                             <tr>
-                                <td>{order.createdAt}</td>
                                 <td>
-                                    {order.name} {order.email} <br />
-                                    {order.city} {order.postCode}{" "}
-                                    {order.country} <br />
+                                    <Center>
+                                        {new Date(
+                                            order.createdAt
+                                        ).toLocaleString()}
+                                    </Center>
+                                </td>
+                                <td>
+                                    <Center>
+                                        {order.paid ? (
+                                            <p className={styles.paid}>paid</p>
+                                        ) : (
+                                            <p className={styles.notPaid}>
+                                                "not paid"
+                                            </p>
+                                        )}
+                                    </Center>
+                                </td>
+                                <td>
+                                    <Center>
+                                        {order.name} {order.email} <br />
+                                        {order.city} {order.postCode}{" "}
+                                        {order.country} <br />
+                                    </Center>
                                     {order.streetAddress}
                                 </td>
                                 <td>
-                                    {order.line_items &&
-                                        order.line_items.map((items) => (
-                                            <>
-                                                {
-                                                    items.price_data
-                                                        ?.product_data.name
-                                                }
-                                                {items.quantity}
-                                                <br />
+                                    <center>
+                                        {order.line_items &&
+                                            order.line_items.map((items) => (
+                                                <>
+                                                    {
+                                                        items.price_data
+                                                            ?.product_data.name
+                                                    }
+                                                    {items.quantity}
+                                                    <br />
 
-                                                <br />
-                                            </>
-                                        ))}
+                                                    <br />
+                                                </>
+                                            ))}
+                                    </center>
                                 </td>
                             </tr>
                         ))}
