@@ -40,10 +40,10 @@ function OrdersPage() {
                                 <td>
                                     <Center>
                                         {order.paid ? (
-                                            <p className={styles.paid}>paid</p>
+                                            <p className={styles.paid}>Paid</p>
                                         ) : (
                                             <p className={styles.notPaid}>
-                                                "not paid"
+                                                Not paid
                                             </p>
                                         )}
                                     </Center>
