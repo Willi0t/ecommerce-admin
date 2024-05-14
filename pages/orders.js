@@ -29,7 +29,7 @@ function OrdersPage() {
                 <tbody>
                     {orders.length > 0 &&
                         orders.map((order) => (
-                            <tr>
+                            <tr key={order._id}>
                                 <td>
                                     <Center>
                                         {new Date(
