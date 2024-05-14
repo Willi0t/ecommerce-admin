@@ -4,8 +4,6 @@ import Layout from "@/components/layout";
 import axios from "axios";
 import { useRouter } from "next/router";
 
-//changed deleteProducts name form D to d
-
 function DeleteProductPage() {
     const [productInfo, setProductInfo] = useState();
     const router = useRouter();
