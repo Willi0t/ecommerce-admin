@@ -8,24 +8,21 @@ const adminEmails = ["william.sinclair92@gmail.com"];
 
 export const authOptions = {
     providers: [
-        // OAuth authentication providers...
         GoogleProvider({
             clientId: process.env.GOOGLE_ID,
             clientSecret: process.env.GOOGLE_SECRET,
         }),
     ],
     adapter: MongoDBAdapter(clientPromise),
-    secret: process.env.NEXTAUTH_SECRET, // Add this line
+    secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         session: ({ session, token, user }) => {
-            if (adminEmails.includes(session?.user?.email)) {
-                session.user.isAdmin = true; // Better to add an isAdmin flag
-                return session;
-            } else {
-                return null; // Return null to invalidate the session if not admin
-            }
+            session.user.isAdmin = adminEmails.includes(session?.user?.email); // Simplified admin check
+            return session.user.isAdmin ? session : null;
         },
     },
+    // Add the NEXTAUTH_URL here
+    site: process.env.NEXTAUTH_URL, // This sets the base URL for callback URLs and other internal processes
 };
 
 export default NextAuth(authOptions);
