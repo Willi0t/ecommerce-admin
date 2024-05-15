@@ -3,8 +3,11 @@ import GoogleProvider from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from "@/lib/mongodb";
 
-//adding Admin Email
-const adminEmails = ["william.sinclair92@gmail.com"];
+//adding Admin Emails
+const adminEmails = [
+    "william.sinclair92@gmail.com",
+    "ecommerce767867@gmail.com",
+];
 
 export const authOptions = {
     providers: [
@@ -17,12 +20,12 @@ export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
     callbacks: {
         session: ({ session, token, user }) => {
-            session.user.isAdmin = adminEmails.includes(session?.user?.email); // Simplified admin check
+            session.user.isAdmin = adminEmails.includes(session?.user?.email);
             return session.user.isAdmin ? session : null;
         },
     },
-    // Add the NEXTAUTH_URL here
-    site: process.env.NEXTAUTH_URL, // This sets the base URL for callback URLs and other internal processes
+
+    site: process.env.NEXTAUTH_URL,
 };
 
 export default NextAuth(authOptions);
