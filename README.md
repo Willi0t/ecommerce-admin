@@ -30,6 +30,8 @@ This project is an admin panel designed to function as a CMS for managing produc
 
 This e-commerce project consists of two separate applications: [E-commerce Front](https://github.com/Willi0t/ecommerce-front) and [E-commerce Admin](https://github.com/Willi0t/ecommerce-admin). The store offers a simplified tech shop experience, featuring a variety of merchandise including phones, tablets, and laptops. The admin panel, built with Next.js, provides a comprehensive interface for managing the store's inventory and processing orders. It allows administrators to easily add, update, and remove products, as well as handle customer orders efficiently. This dual-application setup ensures a smooth and efficient experience for both customers and store managers.
 
+> **⚠️ Note:** The settings page is currently in development and is not yet functional .
+
 ## Built With
 
 <a href="https://nextjs.org" target="_blank">
