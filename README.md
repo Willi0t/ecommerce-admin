@@ -2,7 +2,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-  <h3 align="center">E-commerce Platform</h3>
+  <h3 align="center">Admin page of E-commerce Platfor</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details>
