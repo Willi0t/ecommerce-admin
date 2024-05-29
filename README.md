@@ -30,9 +30,10 @@ This project is an admin panel designed to function as a CMS for managing produc
 
 This e-commerce project consists of two separate applications: [E-commerce Front](https://github.com/Willi0t/ecommerce-front) and [E-commerce Admin](https://github.com/Willi0t/ecommerce-admin). The store offers a simplified tech shop experience, featuring a variety of merchandise including phones, tablets, and laptops. The admin panel, built with Next.js, provides a comprehensive interface for managing the store's inventory and processing orders. It allows administrators to easily add, update, and remove products, as well as handle customer orders efficiently. This dual-application setup ensures a smooth and efficient experience for both customers and store managers.
 
-> **⚠️ Note:** The settings page is currently in development and is not yet functional .
-> > ** Note:** All the orders will show up as not paid, eaven when paid, this is due to the endpoint key is only acessable localy with thier cli in test mode .
-> > ** Note:** the orders might not be fetched due to MongoDB, i use the free version and the cluster is set as inactive after 30 days of inactivity .
+> **⚠️ IMPORTANT NOTES:**   .
+> >  The settings page is currently in development and is not yet functional .
+> > >   All the orders will show up as not paid, eaven when paid, this is due to the endpoint key is only acessable localy with thier cli in test mode .
+> > > >  the orders might not be fetched due to MongoDB, i use the free version and the cluster is set as inactive after 30 days of inactivity .
 
 ## Built With
 
