@@ -87,8 +87,8 @@ For styling, I opted for CSS Modules. CSS Modules provide a way to write modular
 ## Usage
 
 To log in to the admin panel, use the following credentials:
-- **Email**: e-commerce-admin-001@gmail.com
-- **Password**: Zxcvbnm123
+- **Email**: e.commerce.panel.001@gmail.com
+- **Password**: J8w$zT9m#RqL2@X
 
 You can add, update, and remove products, managing them efficiently through the admin panel. The settings page is an upcoming feature and is not in production yet.
 
