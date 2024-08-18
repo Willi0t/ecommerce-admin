@@ -6,7 +6,7 @@ import clientPromise from "@/lib/mongodb";
 //adding Admin Emails
 const adminEmails = [
     "william.sinclair92@gmail.com",
-    "ecommerce767867@gmail.com",
+    "e.commerce.panel.001@gmail.com",
 ];
 
 export const authOptions = {
