@@ -28,12 +28,17 @@
 
 This project is an admin panel designed to function as a CMS for managing products in a webstore. It allows administrators to upload product details including titles, images, and descriptions, which are then displayed on the storefront of a separate project.
 
-This e-commerce project consists of two separate applications: [E-commerce Front](https://github.com/Willi0t/ecommerce-front) and [E-commerce Admin](https://github.com/Willi0t/ecommerce-admin). The store offers a simplified tech shop experience, featuring a variety of merchandise including phones, tablets, and laptops. The admin panel, built with Next.js, provides a comprehensive interface for managing the store's inventory and processing orders. It allows administrators to easily add, update, and remove products, as well as handle customer orders efficiently. This dual-application setup ensures a smooth and efficient experience for both customers and store managers.
+This e-commerce project consists of two separate applications: [E-commerce Front](https://github.com/Willi0t/ecommerce-front) and [E-commerce Admin](https://github.com/Willi0t/ecommerce-admin). The store offers a simplified tech shop experience, featuring a variety of merchandise including phones, tablets, and laptops. The admin panel, built with Next.js, provides a comprehensive interface for managing the store's inventory and processing orders. It allows administrators to easily add, update, and remove products, as well as handle customer orders efficiently. This dual-application setup ensures a smooth and efficient experience for both customers and store managers.  
+
+
+**[Demo Link](https://e-commerce-admin-001.netlify.app)**
 
 > **⚠️ IMPORTANT NOTES:**   .
 > >  The settings page is currently in development and is not yet functional .
 > > >   All the orders will show up as not paid, eaven when paid, this is due to the endpoint key is only acessable localy with thier cli in test mode .
 > > > >  the orders might not be fetched due to MongoDB, i use the free version and the cluster is set as inactive after 30 days of inactivity .
+
+
 
 ## Built With
 
